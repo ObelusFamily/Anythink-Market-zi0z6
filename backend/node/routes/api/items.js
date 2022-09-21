@@ -50,7 +50,11 @@ router.get("/", auth.optional, function(req, res, next) {
   }
 
   if (typeof req.query.tag !== "undefined") {
-    query.tagList = { $in: [req.query.tag, req.query.title] };
+    query.tagList = { $in: [req.query.tag] };
+  }
+
+  if (typeof req.query.item.title !== "undefined") {
+     query.item = req.query.item.title;
   }
 
   Promise.all([
