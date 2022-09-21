@@ -19,7 +19,7 @@ These scripts work against the production `wilco-engine` and require an API TOKE
 ### Print all quest + branch tree (data is from `prod`):
 
 ```bash
-API_SERVER_TOKEN=123456 yarn print-tree
+API_SERVER_TOKEN=<token> yarn print-tree
 ```
 
 ### Update all child branches of `BRANCH`:
@@ -29,5 +29,5 @@ This is the script we run whenever a PR is merged, which updates (via rebase) al
 NOTE: This does not modify this Github repo directly, but merely allows you to test the actions locally on your own machine.
 
 ```bash
-BRANCH=<branch_name> API_SERVER_TOKEN=123456 yarn update-child-branches
+BRANCH=<branch_name> API_SERVER_TOKEN=<token> yarn update-child-branches
 ```
